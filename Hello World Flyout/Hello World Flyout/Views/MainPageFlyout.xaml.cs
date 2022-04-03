@@ -37,6 +37,11 @@ namespace Hello_World_Flyout.Views
                 {
                     new MainPageFlyoutMenuItem { Id = 0, Title = "About Weather", TargetType=typeof(AboutPage) },
                     new MainPageFlyoutMenuItem { Id = 1, Title = "Debug Console", TargetType=typeof(ConsolePage) },
+                    new MainPageFlyoutMenuItem { Id = 2, Title = "Stockholm", TargetType=typeof(Page1),
+                        PageInit = new MainPageFlyoutInitItem{ SomeInitData = "Some init data to page constructor"}},
+                    new MainPageFlyoutMenuItem { Id = 3, Title = "Copenhagen", TargetType=typeof(Page1) },
+                    new MainPageFlyoutMenuItem { Id = 4, Title = "Gavle", TargetType=typeof(Page1) },
+
                 });
             }
         }

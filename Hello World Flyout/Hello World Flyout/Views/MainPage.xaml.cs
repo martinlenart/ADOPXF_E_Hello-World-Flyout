@@ -28,7 +28,15 @@ namespace Hello_World_Flyout.Views
             if (item == null)
                 return;
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
+            Page page = null;
+            if (item.PageInit != null)
+            {
+                page = (Page)Activator.CreateInstance(item.TargetType, item.PageInit);
+            }
+            else
+            {
+                page = (Page)Activator.CreateInstance(item.TargetType);
+            }
             page.Title = item.Title;
 
             Detail = new NavigationPage(page);
